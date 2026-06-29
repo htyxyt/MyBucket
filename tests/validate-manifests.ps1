@@ -8,7 +8,10 @@ $bucketDir = Join-Path $Root 'bucket'
 $expectedApps = @(
     'markra',
     'clipboardx',
-    'clipboardx-noruntime'
+    'clipboardx-noruntime',
+    'codexplusplus',
+    'pastemd',
+    'cc-switch'
 )
 
 if (-not (Test-Path -LiteralPath $bucketDir -PathType Container)) {
@@ -35,8 +38,8 @@ foreach ($app in $expectedApps) {
     if ($x64.hash -notmatch '^[a-fA-F0-9]{64}$') {
         throw "bucket/$app.json has an invalid SHA256 hash"
     }
-    if (-not $manifest.shortcuts -or $manifest.shortcuts.Count -lt 1) {
-        throw "bucket/$app.json must define at least one shortcut"
+    if ((-not $manifest.shortcuts -or $manifest.shortcuts.Count -lt 1) -and -not $manifest.installer.script) {
+        throw "bucket/$app.json must define at least one shortcut or installer.script"
     }
 }
 

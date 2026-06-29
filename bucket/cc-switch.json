@@ -1,0 +1,29 @@
+{
+    "version": "3.16.4",
+    "description": "Desktop app for switching and managing Claude Code/Codex providers.",
+    "homepage": "https://github.com/farion1231/cc-switch",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/farion1231/cc-switch/releases/download/v3.16.4/CC-Switch-v3.16.4-Windows-Portable.zip",
+            "hash": "23fd21dcdfaf69a257217ac1c2fb025e537dc851ab49aa42e95e32f207a9ed57"
+        }
+    },
+    "bin": "cc-switch.exe",
+    "shortcuts": [
+        [
+            "cc-switch.exe",
+            "CC Switch"
+        ]
+    ],
+    "checkver": {
+        "github": "https://github.com/farion1231/cc-switch"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/farion1231/cc-switch/releases/download/v$version/CC-Switch-v$version-Windows-Portable.zip"
+            }
+        }
+    }
+}
