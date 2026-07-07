@@ -44,3 +44,23 @@ Validate local manifests:
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File .\tests\validate-manifests.ps1
 ```
+
+Validate GitHub Actions workflow:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File .\tests\validate-workflows.ps1
+```
+
+## Automation
+
+GitHub Actions runs `.github/workflows/autoupdate.yml` every day and can also be started manually from the Actions tab.
+
+The workflow installs Scoop on a Windows runner, runs `checkver.ps1 -u` for every manifest in `bucket/`, validates the manifests, and commits changed manifests back to `main`. After that, local machines can detect those updates with:
+
+```powershell
+scoop update
+scoop status
+scoop update <app>
+```
+
+If the first workflow run cannot push changes, open the repository on GitHub and check **Settings > Actions > General > Workflow permissions**. The workflow needs permission to write repository contents.
