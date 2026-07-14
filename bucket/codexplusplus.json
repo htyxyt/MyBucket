@@ -1,12 +1,12 @@
 {
-    "version": "1.2.35",
+    "version": "1.2.36",
     "description": "Codex++ desktop companion and manager.",
     "homepage": "https://github.com/BigPizzaV3/CodexPlusPlus",
     "license": "AGPL-3.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/BigPizzaV3/CodexPlusPlus/releases/download/v1.2.35/CodexPlusPlus-1.2.35-windows-x64.zip",
-            "hash": "1ef38e0a03e99a91720cce59c8e665c6f763e339861275b27a9ea8b24b1e1169"
+            "url": "https://github.com/BigPizzaV3/CodexPlusPlus/releases/download/v1.2.36/CodexPlusPlus-1.2.36-windows-x64.zip",
+            "hash": "685c4c5c274e66b0e5eac073b900d4308bb761484efe03e99dd8dd85c3d4232f"
         }
     },
     "bin": [
